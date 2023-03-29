@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\BoysController;
 use App\Http\Controllers\MaqolController;
-use App\Http\Controllers\MaqolFormaController;
-use App\Http\Controllers\OqituvchiController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +27,12 @@ Route::get('/Talaba haqida', [PageController::class, 'student'])->name('student'
 
 
 //Admin panel
-Route::get('/admin', [MaqolController::class, 'admin'])->name('admin');
+Route::get('/admin', [BoysController::class, 'admin'])->name('admin');
 
 Route::resource('admin/BoshMaqol', MaqolController::class);
+Route::resource('admin/yigitlar', BoysController::class);
 Route::resource('admin/oqituvchi', OqituvchiController::class);
-Route::resource('admin/oquvchilar', OquvchiController::class);
-Route::resource('admin/biz haqimizda', BizHaqimizdaController::class);
-Route::resource('admin/maktab formasi', FormaController::class);
-Route::resource('admin/xonalar', XonalarController::class);
+// Route::resource('admin/oquvchilar', OquvchiController::class);
+// Route::resource('admin/biz haqimizda', BizHaqimizdaController::class);
+// Route::resource('admin/maktab formasi', FormaController::class);
+// Route::resource('admin/xonalar', XonalarController::class);

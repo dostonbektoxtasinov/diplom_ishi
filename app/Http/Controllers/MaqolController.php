@@ -2,27 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
 
 class MaqolController extends Controller
 {
-
-    public function admin()
-    {
-        return view('Admin.layouts.main');
-    }
-
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        $posts = Post::all();
-        // dd($posts);
-        return view('Admin.admin.BoshMaqol.index', ['posts' => $posts]);
+        return view('Admin.admin.BoshMaqol.index');
     }
 
     /**

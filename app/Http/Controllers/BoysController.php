@@ -2,36 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Boys;
 use Illuminate\Http\Request;
 
-class OqituvchiController extends Controller
+class BoysController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function admin()
     {
-        return view('Admin.layouts.main');
+        return view('Admin.admin.yigitlar.posts.index');
     }
-
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $posts = Post::all();
-        return view('Admin.admin.oqituvchi.index', ['posts' => $posts]);
-    }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('Admin.admin.yigitlar.posts.create');
     }
 
     /**
@@ -39,7 +28,21 @@ class OqituvchiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'photo' => 'required',
+            'fish' => 'required',
+            'short_content' => 'required',
+            'content' => 'required',
+        ]);
+
+        $post = Boys::create([
+            'photo' => $request->photo,
+            'fish' => $request->fish,
+            'short_content' => $request->short_content,
+            'content' => $request->content
+        ]);
+
+        return redirect()->route('Admin.admin.yigitlar.posts.index');
     }
 
     /**

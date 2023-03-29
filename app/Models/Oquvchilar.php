@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BoshMaqol extends Model
+class Oquvchilar extends Model
 {
     use HasFactory;
 
-    protected $table = 'bosh_qism_maqol';
+
+    protected $table = 'oquvchilars';
+
 }

@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Oqituvchilar extends Model
 {
     use HasFactory;
 
-    // protected $table = 'biz_haqimizda';
-    
+    protected $table = 'oqituvchilars';
+
 }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Xonalar extends Model
 {
     use HasFactory;
+
+    protected $table = 'xonalar';
+
 }
