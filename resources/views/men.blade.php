@@ -23,7 +23,7 @@
                     </h4>
                 </div>
             </div>
-            @foreach ($posts as $post)
+            {{-- @foreach ($posts as $post) --}}
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="position-relative mb-4">
@@ -38,12 +38,14 @@
                             <span class="text-primary px-2">|</span>
                             <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
                         </div>
-                        <h5 class="font-weight-medium mb-2">{{ $post->title }}</h5>
-                        <p class="mb-4">{{ $post->content }}</p>
+                        <h5 class="font-weight-medium mb-2">zsdxfcghjbk</h5>
+                        <p class="mb-4">zasdfgh</p>
+                        {{-- <h5 class="font-weight-medium mb-2">{{ $post->title }}</h5>
+                        <p class="mb-4">{{ $post->content }}</p> --}}
                         <a class="btn btn-sm btn-primary py-2" href="{{ route('student') }}">To'liq malumot</a>
                     </div>
                 </div>
-            @endforeach
+            {{-- @endforeach --}}
             <div class="col-12">
                 <nav aria-label="Page navigation">
                     <ul class="pagination pagination-lg justify-content-center mb-0">

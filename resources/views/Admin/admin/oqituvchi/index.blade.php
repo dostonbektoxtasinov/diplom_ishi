@@ -1,6 +1,6 @@
 @extends('Admin.layouts.main')
 
-@section('content')
+@section('oqituvchi')
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
@@ -8,45 +8,43 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Ertalabki dars</th>
-                        <th>Kechki dars</th>
-                        <th>Manzil</th>
-                        <th>Telefon nomer</th>
-                        <th>Email</th>
-                        <th>Telegram</th>
-                        <th>Instagram</th>
-                        <th>Whatsapp</th>
-                        <th>Facebook</th>
+                        <th>O'qituvchi rasm</th>
+                        <th>O'qituvchi ismi</th>
+                        <th>O'qitish fani</th>
+                        <th></th>
+                        <th>
+                            <a href="#" class="btn btn-success">
+                                Create
+                            </a>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($posts as $post)
                         <tr>
                             <td>{{ $post->id }}</td>
-                            <td>{{ $post->dars_ertalab }}</td>
-                            <td>{{ $post->dars_kech }}</td>
-                            <td>{{ $post->lokatsiya }}</td>
-                            <td>{{ $post->tel_nomer }}</td>
-                            <td>{{ $post->email }}</td>
-                            <td>{{ $post->telegram }}</td>
-                            <td>{{ $post->instagram }}</td>
-                            <td>{{ $post->watsapp }}</td>
-                            <td>{{ $post->facebook }}</td>
+                            <td>{{ $post->rasm }}</td>
+                            <td>{{ $post->ism }}</td>
+                            <td>{{ $post->fan }}</td>
+                            <td>
+                                <a href="#" class="btn btn-primary">
+                                    Update
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-danger">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>Ertalabki dars</th>
-                        <th>Kechki dars</th>
-                        <th>Manzil</th>
-                        <th>Telefon nomer</th>
-                        <th>Email</th>
-                        <th>Telegram</th>
-                        <th>Instagram</th>
-                        <th>Whatsapp</th>
-                        <th>Facebook</th>
+                        <th>O'qituvchi rasm</th>
+                        <th>O'qituvchi ismi</th>
+                        <th>O'qitish fani</th>
                     </tr>
                 </tfoot>
             </table>

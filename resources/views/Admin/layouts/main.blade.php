@@ -46,17 +46,44 @@
         @include('Admin.layouts.left')
 
         <div class="content-wrapper">
-            <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     @yield('content')
-                </div><!-- /.container-fluid -->
+                </div>
+                
                 <div class="container-fluid">
                     @yield('Maqol')
-                </div><!-- /.container-fluid -->
+                </div>
+                
+                <div class="container-fluid">
+                    @yield('biz_haqimizda')
+                </div>
+                
+                <div class="container-fluid">
+                    @yield('Forma')
+                </div>
+               
+                <div class="container-fluid">
+                    @yield('oqituvchi')
+                </div>
+                
+                <div class="container-fluid">
+                    @yield('oquvchilar')
+                </div>
+               
+                <div class="container-fluid">
+                    @yield('yigitlar')
+                </div>
+                
+                <div class="container-fluid">
+                    @yield('qizlar')
+                </div>
+                
+                <div class="container-fluid">
+                    @yield('Xonalar')
+                </div>
+                
             </section>
-            <!-- /.content -->
-            <!-- /.content-wrapper -->
         </div>
     </div>
 

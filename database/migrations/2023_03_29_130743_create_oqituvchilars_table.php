@@ -16,9 +16,6 @@ return new class extends Migration
             $table->string('rasm');
             $table->string('ism', 100);
             $table->string('fan', 100);
-            $table->string('telegram');
-            $table->string('facebook');
-            $table->string('instagram');
             $table->timestamps();
         });
     }

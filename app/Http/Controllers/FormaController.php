@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Boys;
+use App\Models\Forma;
 use Illuminate\Http\Request;
 
-class BoysController extends Controller
+class FormaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function admin()
+    public function index()
     {
-        return view('Admin.admin.yigitlar.posts.index');
+        $posts = Forma::all();
+
+        return view('Admin.admin.Forma.index')->with('posts', $posts);
     }
 
     /**
@@ -20,7 +22,7 @@ class BoysController extends Controller
      */
     public function create()
     {
-        return view('Admin.admin.yigitlar.posts.create');
+        return view('Admin.admin.Forma.create');
     }
 
     /**
@@ -28,21 +30,24 @@ class BoysController extends Controller
      */
     public function store(Request $request)
     {
+        // if ($request->has('rasm')) {
+        //     $name = $request->file('rasm')->getClientOriginalName();
+        // $path = $request->file('rasm')->storeAs('Forma', $name);
+        // }
+            $path = $request->file('rasm')->storeAs('Forma');
+
         $request->validate([
-            'photo' => 'required',
-            'fish' => 'required',
-            'short_content' => 'required',
-            'content' => 'required',
+            'ism' => 'required|max:80',
+            'rasm' => 'required',
         ]);
 
-        $post = Boys::create([
-            'photo' => $request->photo,
-            'fish' => $request->fish,
-            'short_content' => $request->short_content,
-            'content' => $request->content
+        $post = Forma::create([
+            'ism' => $request->ism, 
+            'rasm' => $path
+
         ]);
 
-        return redirect()->route('Admin.admin.yigitlar.posts.index');
+        return redirect()->route('Forma.index');
     }
 
     /**

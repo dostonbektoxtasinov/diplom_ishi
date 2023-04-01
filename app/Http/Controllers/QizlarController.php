@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Maqol;
+use App\Models\Qizlar;
 use Illuminate\Http\Request;
 
-class MaqolController extends Controller
+class QizlarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $posts = Qizlar::all();
 
-        $posts = Maqol::all();
-
-        return view('Admin.admin.BoshMaqol.index')->with('posts', $posts);
+        return view('Admin.admin.qizlar.index')->with('posts', $posts);
     }
 
     /**

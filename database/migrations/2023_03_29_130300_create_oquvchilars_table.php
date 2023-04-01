@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('umumiy', 100);
             $table->string('qizlar', 100);
             $table->string('yigitlar', 100);
+            $table->string('jinsi', 100);
             $table->string('rasm');
             $table->timestamps();
         });

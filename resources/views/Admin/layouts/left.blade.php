@@ -49,7 +49,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="admin/BoshMaqol" class="nav-link">
+                            <a href="/admin/BoshMaqol" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>
                                     Bosh qism maqol
@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Admin" class="nav-link">
+                            <a href="/admin/Forma" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>
                                     Maktab formasi
@@ -65,25 +65,25 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/oquvchilar" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>O'quvchilar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/Xonalar" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>O'quv xona</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="admin/oqituvchi" class="nav-link">
+                            <a href="/admin/oqituvchi" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>O'qituvchi</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/biz_haqimizda" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>Biz haqimizda</p>
                             </a>
@@ -100,27 +100,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="/admin/yigitlar" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>Yigitlar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/qizlar" class="nav-link">
                                 <i class="fa-solid fa-user nav-icon"></i>
                                 <p>Qizlar</p>
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-users nav-icon"></i>
-                        <p>
-                            Xodimlar
-                            {{-- <span class="right badge badge-danger">New</span> --}}
-                        </p>
-                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -130,38 +121,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>
-                            Charts
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
-                        <p>
-                            UI Elements
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Forms
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Tables
-                        </p>
-                    </a>
-                </li>
+              
                 <li class="nav-header">EXAMPLES</li>
             </ul>
         </nav>

@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Maqol;
+use App\Models\Biz_haqimizda;
 use Illuminate\Http\Request;
 
-class MaqolController extends Controller
+class BizHaqimizdaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $posts = Biz_haqimizda::all();
 
-        $posts = Maqol::all();
-
-        return view('Admin.admin.BoshMaqol.index')->with('posts', $posts);
+        return view('Admin.admin.biz_haqimizda.index')->with('posts', $posts);
     }
 
     /**
@@ -23,7 +22,7 @@ class MaqolController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.admin.biz_haqimizda.create');
     }
 
     /**

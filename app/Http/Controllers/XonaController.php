@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Maqol;
+use App\Models\Xonalar;
 use Illuminate\Http\Request;
 
-class MaqolController extends Controller
+class XonaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $posts = Xonalar::all();
 
-        $posts = Maqol::all();
-
-        return view('Admin.admin.BoshMaqol.index')->with('posts', $posts);
+        return view('Admin.admin.Xonalar.index')->with('posts', $posts);
     }
 
     /**

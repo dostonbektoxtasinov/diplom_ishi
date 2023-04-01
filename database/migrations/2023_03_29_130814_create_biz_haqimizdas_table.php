@@ -18,10 +18,6 @@ return new class extends Migration
             $table->string('lokatsiya');
             $table->string('nomer');
             $table->string('email');
-            $table->string('telegram');
-            $table->string('instagram');
-            $table->string('watsapp');
-            $table->string('facebook');
             $table->timestamps();
         });
     }
