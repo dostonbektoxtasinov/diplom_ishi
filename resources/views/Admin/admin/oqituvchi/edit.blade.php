@@ -6,22 +6,23 @@
     <div class="col-lg-7 mb-5 mb-lg-0">
         <div class="contact-form">
             <div id="success"></div>
-            <form action="{{ route('oqituvchi.store') }}"  method="post" enctype="multipart/form-data">
+            <form action="{{ route('oqituvchi.update', ['oqituvchi' => $oqituvchi->id]) }}"  method="post" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
                 <div class="control-group mb-4">
-                    <input type="file" class="form-control p-4" name="rasm" placeholder="Rasm"/>
+                    <input type="file" class="form-control p-4" name="rasm" placeholder="Rasm" value="{{ $oqituvchi->rasm }}"/>
                     @error('rasm')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="text" class="form-control p-4" name="ism" placeholder="Fan oqituvchi" />
+                    <input type="text" class="form-control p-4" name="ism" placeholder="Fan oqituvchi"  value="{{ $oqituvchi->ism }}"/>
                     @error('Ism')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="text" class="form-control p-4" name="fan" placeholder="Fan nomi" />
+                    <input type="text" class="form-control p-4" name="fan" placeholder="Fan nomi" value="{{ $oqituvchi->fan }}"/>
                     @error('Fan')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror

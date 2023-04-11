@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BoshmaqolRequest;
 use App\Models\Maqol;
 use Illuminate\Http\Request;
 
@@ -23,15 +24,19 @@ class MaqolController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.admin.BoshMaqol.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BoshmaqolRequest $request)
     {
-        //
+        $post = Maqol::create([
+            'maqollar' => $request->maqol,
+        ]);
+
+        return redirect()->route('BoshMaqol.index');
     }
 
     /**
@@ -45,24 +50,30 @@ class MaqolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Maqol $BoshMaqol)
     {
-        //
+        return view('Admin.admin.BoshMaqol.edit')->with(['BoshMaqol' => $BoshMaqol]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BoshmaqolRequest $request, Maqol $BoshMaqol)
     {
-        //
+        $BoshMaqol->update([
+            'maqollar' => $request->maqol,
+        ]);
+
+        return redirect()->route('BoshMaqol.index', ['BoshMaqol',  $BoshMaqol->id]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(Maqol $BoshMaqol)
+    {   
+        $BoshMaqol->delete();
+
+        return redirect()->route('BoshMaqol.index');
     }
 }

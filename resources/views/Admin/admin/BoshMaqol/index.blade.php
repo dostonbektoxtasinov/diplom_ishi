@@ -10,7 +10,7 @@
                     <th>Maqol</th>
                     <th></th>
                     <th>
-                        <a href="#" class="btn btn-success">
+                        <a href="{{ route('BoshMaqol.create') }}" class="btn btn-success">
                             Create
                         </a>
                     </th>
@@ -23,14 +23,18 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->maqollar }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">
+                            <a href="{{ route('BoshMaqol.edit', ['BoshMaqol' => $post->id]) }}" class="btn btn-primary">
                                 Update
                             </a>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <form action="{{ route('BoshMaqol.destroy', ['BoshMaqol' => $post->id]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

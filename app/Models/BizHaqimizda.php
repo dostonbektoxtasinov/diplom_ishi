@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Forma extends Model
+class BizHaqimizda extends Model
 {
     use HasFactory;
+    protected $table = "biz-haqimizdas";
 
-    protected $table = 'formas';
-
+    
     protected $fillable = [
-        'ism',
-        'rasm'
+        'dars_ertalab',
+        'dars_kech',
+        'lokatsiya',
+        'nomer',
+        'email',
     ];
 }

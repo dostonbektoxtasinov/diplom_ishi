@@ -6,35 +6,35 @@
     <div class="col-lg-7 mb-5 mb-lg-0">
         <div class="contact-form">
             <div id="success"></div>
-            <form action="{{ route('biz_haqimizda.store') }}"  method="post">
+            <form action="{{ route('biz_haqimizda.update', ['biz_haqimizda' => $biz_haqimizda->id ]) }}"  method="POST">
+                @method('PUT')
                 @csrf
                 <div class="control-group mb-4">
-                    <label for=""></label>
-                    <input type="text" class="form-control p-4" name="ertalab" placeholder="Dars ertalab" />
+                    <input type="text" class="form-control p-4" name="dars_ertalab" placeholder="Dars ertalab" value="{{ $biz_haqimizda->dars_ertalab }}"/>
                     @error('Dars vaqti')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="text" class="form-control p-4" name="kech" placeholder="Dars kech" />
+                    <input type="text" class="form-control p-4" name="dars_kech" placeholder="Dars kech" value="{{ $biz_haqimizda->dars_kech }}"/>
                     @error('Dars vaqti')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="text" class="form-control p-4" name="lokatsiya" placeholder="Lokatsiya" />
+                    <input type="text" class="form-control p-4" name="lokatsiya" placeholder="Lokatsiya" value="{{ $biz_haqimizda->lokatsiya }}"/>
                     @error('Manzil')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="number" class="form-control p-4" name="nomer" placeholder="Telefon nomer" />
+                    <input type="number" class="form-control p-4" name="nomer" placeholder="Telefon nomer" value="{{ $biz_haqimizda->nomer }}"/>
                     @error('Nomer')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="control-group mb-4">
-                    <input type="email" class="form-control p-4" name="email" placeholder="example@gmail.com" />
+                    <input type="email" class="form-control p-4" name="email" placeholder="example@gmail.com" value="{{ $biz_haqimizda->email }}"/>
                     @error('Email')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror

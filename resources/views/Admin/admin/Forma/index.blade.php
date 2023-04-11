@@ -23,16 +23,22 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->ism }}</td>
-                        <td>{{ $post->rasm }}</td>
                         <td>
-                            <a href="" class="btn btn-primary">
+                            <img src="{{asset('storage/'.$post->rasm)}}" alt="" width="80px" height="50px">
+                        </td>
+                        <td>
+                            <a href="{{ route('Forma.edit', ['Forma' => $post->id]) }}" class="btn btn-primary">
                                 Update
                             </a>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <form action="{{ route('Forma.destroy', ['Forma' => $post->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

@@ -13,7 +13,7 @@
                         <th>O'qitish fani</th>
                         <th></th>
                         <th>
-                            <a href="#" class="btn btn-success">
+                            <a href="{{ route('oqituvchi.create') }}" class="btn btn-success">
                                 Create
                             </a>
                         </th>
@@ -23,18 +23,25 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td>{{ $post->id }}</td>
-                            <td>{{ $post->rasm }}</td>
+                            <td>
+                                <img style="width: 100px;" src="{{ asset('storage/'.$post->rasm) }}"  alt="image">
+                            </td>
                             <td>{{ $post->ism }}</td>
                             <td>{{ $post->fan }}</td>
+                           
                             <td>
-                                <a href="#" class="btn btn-primary">
+                                <a href="{{ route('oqituvchi.edit', ['oqituvchi' => $post->id]) }}" class="btn btn-primary">
                                     Update
                                 </a>
                             </td>
-                            <td>
-                                <a href="#" class="btn btn-danger">
-                                    Delete
-                                </a>
+                            <td> 
+                                <form action="{{ route('oqituvchi.destroy', ['oqituvchi' => $post->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

@@ -11,4 +11,8 @@ class Xonalar extends Model
 
     protected $table = 'xonalar';
 
+    protected $fillable = [
+        'hona_nomi',
+        'rasm'
+    ];
 }

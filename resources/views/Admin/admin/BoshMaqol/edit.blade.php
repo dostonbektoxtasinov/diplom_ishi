@@ -6,10 +6,11 @@
     <div class="col-lg-7 mb-5 mb-lg-0">
         <div class="contact-form">
             <div id="success"></div>
-            <form action="{{ route('BoshMaqol.store') }}"  method="post">
+            <form action="{{ route('BoshMaqol.update', ['BoshMaqol' => $BoshMaqol->id]) }}"  method="POST">
+                @method('PUT')
                 @csrf
                 <div class="control-group mb-4">
-                    <input type="text" class="form-control p-4" name="maqol" placeholder="Yangi maqol" />
+                    <input type="text" class="form-control p-4" name="maqol" placeholder="Yangi maqol" value="{{ $BoshMaqol->maqollar }}" />
                     @error('Ism')
                         <p class="help-block text-danger mt-4">{{ $message }}</p>
                     @enderror

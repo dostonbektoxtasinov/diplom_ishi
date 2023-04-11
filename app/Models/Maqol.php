@@ -11,4 +11,8 @@ class Maqol extends Model
 
     protected $table = 'maqols';
 
+    protected $fillable = [
+        'maqollar'
+    ];
+
 }

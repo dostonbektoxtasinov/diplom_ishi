@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('oquvchilars', function (Blueprint $table) {
+        Schema::create('och', function (Blueprint $table) {
             $table->id();
-            $table->string('rasm')->nullable();
-            $table->string('ism_fam', 100);
-            $table->string('sinfi', 100);
-            $table->string('jinsi', 100);
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('oquvchilars');
+        Schema::dropIfExists('och');
     }
 };

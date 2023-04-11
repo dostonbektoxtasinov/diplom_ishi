@@ -11,4 +11,9 @@ class Oqituvchilar extends Model
 
     protected $table = 'oqituvchilars';
 
+    protected $fillable = [
+        'rasm',
+        'ism',
+        'fan'
+    ];
 }

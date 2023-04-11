@@ -5,10 +5,11 @@
         <div class="col-lg-7 mb-5 mb-lg-0">
             <div class="contact-form">
                 <div id="success"></div>
-                <form action="{{ route('Xonalar.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('Xonalar.update', ['Xonalar' => $Xonalar->id]) }}" method="POST" enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
                     <div class="control-group mb-4">
-                        <input type="text" class="form-control p-4" name="hona_nomi" placeholder="Hona nomi" />
+                        <input type="text" class="form-control p-4" name="hona_nomi" placeholder="Hona nomi" value="{{ $Xonalar->hona_nomi }}"/>
                         @error('Hona nomi')
                             <p class="help-block text-danger mt-4">{{ $message }}</p>
                         @enderror
@@ -19,8 +20,8 @@
                             <p class="help-block text-danger mt-4">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="flex mt-4">
-                        <button class="btn btn-primary py-3 px-5" type="submit">
+                    <div class="flex mt-4">   
+                        <button class="btn btn-primary  py-3 px-5" type="submit">
                             Saqlash
                         </button>
                         <a href="{{ route('Xonalar.index') }}" class="btn btn-success py-3 px-5 float-right">

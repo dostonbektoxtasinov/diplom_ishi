@@ -31,14 +31,18 @@
                         <td>{{ $post->nomer }}</td>
                         <td>{{ $post->email }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">
+                            <a href="{{ route('biz_haqimizda.edit', ['biz_haqimizda' => $post->id]) }}" class="btn btn-primary">
                                 Update
                             </a>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <form action="{{ route('biz_haqimizda.destroy', ['biz_haqimizda' => $post->id]) }}" method="POST">
+                                @method('PUT')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                         
                     </tr>

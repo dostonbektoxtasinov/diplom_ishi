@@ -3,48 +3,65 @@
         Bosh sahifa
     </x-slot:title>
     <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="img-flui" src="img/25 - maktab-1 corusel.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
-                            <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
-                                Yoshlikda olingan bilim-toshga o'yilgan naqishdir.
-                                </h1>
+    {{-- @section('Maqol')
+        @foreach ($posts as $post) --}}
+            <div class="container-fluid p-0">
+                <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#header-carousel" data-slide-to="1"></li>
+                        <li data-target="#header-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        {{-- <div class="carousel-item active">
+                            <img class="img-flui" src="img/25 - maktab-1 corusel.jpg" alt="Image">
+                            <div class="carousel-caption d-flex align-items-center justify-content-center">
+                                <div class="p-5" style="width: 100%; max-width: 900px;">
+                                    <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
+                                    <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
+                                        {{ $post->maqollar }}
+                                    </h1>
+                                </div>
+                            </div>
+                        </div> --}}
+                        <div class="carousel-item active">
+                            <img class="img-flui" src="img/25 - maktab-1 corusel.jpg" alt="Image">
+                            <div class="carousel-caption d-flex align-items-center justify-content-center">
+                                <div class="p-5" style="width: 100%; max-width: 900px;">
+                                    <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
+                                    <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
+                                        Yoshlikda olingan bilim-toshga o'yilgan naqishdir.
+                                    </h1>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <div class="carousel-item">
-                    <img class="img-flui" src="img/25 - maktab-2 corusel.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
-                            <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
-                                Ta'limsiz odam-ruhsiz tanadir.</h1>
+                        <div class="carousel-item">
+                            <img class="img-flui" src="img/25 - maktab-2 corusel.jpg" alt="Image">
+                            <div class="carousel-caption d-flex align-items-center justify-content-center">
+                                <div class="p-5" style="width: 100%; max-width: 900px;">
+                                    <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
+                                    <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
+                                        Ta'limsiz odam-ruhsiz tanadir.</h1>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="img-flui" src="img/25 - maktab-3 corusel.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
-                            <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">Yaxshi
-                                misol-yaxshi so'zdan yaxshiroqdir</h1>
+                        <div class="carousel-item">
+                            <img class="img-flui" src="img/25 - maktab-3 corusel.jpg" alt="Image">
+                            <div class="carousel-caption d-flex align-items-center justify-content-center">
+                                <div class="p-5" style="width: 100%; max-width: 900px;">
+                                    <h5 class="text-primary text-uppercase mb-md-3">25 - maktab</h5>
+                                    <h1 class="display-3 text-white mb-md-4" style="border-bottom: 5px #FFC600 dashed;">
+                                        Yaxshi
+                                        misol-yaxshi so'zdan yaxshiroqdir</h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        {{-- @endforeach
+    @endsection --}}
+
     <!-- Carousel End -->
 
 
@@ -104,8 +121,8 @@
                     </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"
-                            allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>

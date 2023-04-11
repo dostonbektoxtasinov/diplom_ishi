@@ -11,7 +11,7 @@
                     <th>Rasm</th>
                     <th></th>
                     <th>
-                        <a href="#" class="btn btn-success">
+                        <a href="{{ route('Xonalar.create') }}" class="btn btn-success">
                             Create
                         </a>
                     </th>
@@ -23,16 +23,22 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->hona_nomi }}</td>
-                        <td>{{ $post->rasm }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">
+                            <img style="width: 100px;" src="{{ asset('storage/'.$post->rasm) }}"  alt="image">
+                        </td>
+                        <td>
+                            <a href="{{ route('Xonalar.edit', ['Xonalar' => $post->id]) }}" class="btn btn-primary">
                                 Update
                             </a>
                         </td>
-                        <td>
-                            <a href="#" class="btn btn-danger">
-                                Delete
-                            </a>
+                        <td> 
+                            <form action="{{ route('Xonalar.destroy', ['Xonalar' => $post->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

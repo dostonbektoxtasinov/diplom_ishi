@@ -30,6 +30,7 @@ Route::get('/Talaba yigitlar', [PageController::class, 'men'])->name('men');
 Route::get('/Talaba qizlar', [PageController::class, 'weman'])->name('weman');
 Route::get('/Maktab haqida', [PageController::class, 'about'])->name('about');
 Route::get('/Xodimlar', [PageController::class, 'teachers'])->name('teachers');
+Route::get('/Talabalar', [PageController::class, 'students_all'])->name('students_all');
 Route::get('/Talaba haqida', [PageController::class, 'student'])->name('student');
 Route::get('/Talaba qo\'shish', [PageController::class, 'contact'])->name('contact');
 
@@ -37,7 +38,7 @@ Route::get('/Talaba qo\'shish', [PageController::class, 'contact'])->name('conta
 
 //Admin panel
 Route::get('/admin', [MainController::class, 'admin']);
-
+// Route::get('Forma/edit/{id}', [FormaController::class, 'edit']);
 Route::resource('admin/Forma', FormaController::class);
 Route::resource('admin/Xonalar', XonaController::class);
 Route::resource('admin/qizlar', QizlarController::class);

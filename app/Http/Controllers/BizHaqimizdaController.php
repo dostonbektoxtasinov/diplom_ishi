@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Biz_haqimizda;
+use App\Http\Requests\BizHaqimizdaRequest;
+use App\Models\BizHaqimizda;
 use Illuminate\Http\Request;
 
 class BizHaqimizdaController extends Controller
@@ -12,7 +13,7 @@ class BizHaqimizdaController extends Controller
      */
     public function index()
     {
-        $posts = Biz_haqimizda::all();
+        $posts = BizHaqimizda::all();
 
         return view('Admin.admin.biz_haqimizda.index')->with('posts', $posts);
     }
@@ -28,9 +29,17 @@ class BizHaqimizdaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BizHaqimizdaRequest $request)
     {
-        //
+        $post = BizHaqimizda::create([
+            'dars_ertalab'  => $request->ertalab,
+            'dars_kech'     => $request->kech,
+            'lokatsiya'     => $request->lokatsiya,
+            'nomer'         => $request->nomer,
+            'email'         => $request->email,
+        ]);
+
+        return redirect()->route('biz_haqimizda.index');
     }
 
     /**
@@ -44,24 +53,38 @@ class BizHaqimizdaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(BizHaqimizda $biz_haqimizda)
     {
-        //
+        // $biz_haqimizda = Biz_haqimizda::find($post);
+        // dd($biz_haqimizda);
+        return view('Admin.admin.biz_haqimizda.edit')->with(['biz_haqimizda' => $biz_haqimizda]);
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BizHaqimizdaRequest $request, BizHaqimizda $bizHaqimizda)
     {
-        //
+        $bizHaqimizda->update([
+            'dars_ertalab'  => $request->dars_ertalab,
+            'dars_kech'     => $request->dars_kech,
+            'lokatsiya'     => $request->lokatsiya,
+            'nomer'         => $request->nomer,
+            'email'         => $request->email,
+        ]);
+
+        return redirect()->route('biz_haqimizda.index', ['biz_haqimizda' => $bizHaqimizda->id]);
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(BizHaqimizda $bizHaqimizda)
     {
-        //
+        $bizHaqimizda->delete();
+
+        return redirect()->route('biz_haqimizda.index');
     }
 }

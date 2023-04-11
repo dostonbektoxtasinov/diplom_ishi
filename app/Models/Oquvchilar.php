@@ -12,4 +12,11 @@ class Oquvchilar extends Model
 
     protected $table = 'oquvchilars';
 
+    protected $fillable = [
+        'rasm',
+        'ism_fam',
+        'sinfi',
+        'jinsi',
+    ];
+
 }

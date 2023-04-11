@@ -42,5 +42,11 @@ class PageController extends Controller
         return view('about-student');
     }
    
+    
+    public function students_all()
+    {
+        return view('students_all');
+    }
+   
 
 }

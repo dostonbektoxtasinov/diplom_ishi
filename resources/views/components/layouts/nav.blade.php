@@ -9,13 +9,14 @@
         <div class="navbar-nav mr-auto py-0">
             <a href="{{ route('index') }}" class="nav-item nav-link active">Bosh sahifa</a>
             <a href="{{ route('teachers') }}" class="nav-item nav-link">Xodimlar</a>
-            <div class="nav-item dropdown">
+            <a href="{{ route('students_all') }}" class="nav-item nav-link">Talabalar</a>
+            {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">O'quvchilar</a>
                 <div class="dropdown-menu rounded-0 m-0">
                     <a href="{{ route('men') }}" class="dropdown-item">Yigitlar</a>
                     <a href="{{route('weman')}}" class="dropdown-item">Qizlar</a>
                 </div>
-            </div>
+            </div> --}}
             <a href="{{ route('about' )}}" class="nav-item nav-link">Maktab haqida</a>
             <a href="{{ route('contact') }}" class="nav-item nav-link">Talaba qoshish</a>
         </div>
