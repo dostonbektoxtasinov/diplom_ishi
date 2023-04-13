@@ -26,14 +26,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('index');
-Route::get('/Talaba yigitlar', [PageController::class, 'men'])->name('men');
-Route::get('/Talaba qizlar', [PageController::class, 'weman'])->name('weman');
+// Route::get('/', [PageController::class, 'footer'])->name('footer');
 Route::get('/Maktab haqida', [PageController::class, 'about'])->name('about');
 Route::get('/Xodimlar', [PageController::class, 'teachers'])->name('teachers');
 Route::get('/Talabalar', [PageController::class, 'students_all'])->name('students_all');
-Route::get('/Talaba haqida', [PageController::class, 'student'])->name('student');
 Route::get('/Talaba qo\'shish', [PageController::class, 'contact'])->name('contact');
 
+// Route::get('/Talaba haqida', [PageController::class, 'student'])->name('student');
 
 
 //Admin panel

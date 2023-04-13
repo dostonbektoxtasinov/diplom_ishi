@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{$title ?? 'Bosh sahifa'}}</title>
+    <title>{{ $title ?? 'Bosh sahifa' }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -35,7 +35,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
-                <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                <a href=""
+                    class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                     <h3 class="m-0 display-3 text-primary text-center">
                         25 <br> Maktab
                     </h3>
@@ -72,31 +73,40 @@
                 </div>
                 <x-layouts.nav>
 
-                </x-layouts>
+                    </x-layouts>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
     {{ $slot }}
-    <div class="container-fluid">
-        @yield('Maqol')
-    </div>
 
 
-     <!-- Footer Start -->
-     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="#" class="navbar-brand">
                     <h1 class="m-0 mt-n3 display-4 text-primary text-center">
-                        25 
+                        25
                         <br>
                         Maktab
                     </h1>
                 </a>
                 <p>Biz haqimizda</p>
-                <h5 class="font-weight-semi-bold text-white mb-2">Dars vaqtlarimiz:</h5>
+                {{-- <h5 class="font-weight-semi-bold text-white mb-2">Dars vaqtlarimiz:</h5>
+                @foreach ($bizlar as $biz)
+                    <p class="mb-1">Ertalab: &nbsp; {{ $biz->dars_ertalab }}</p>
+                    <p class="mb-0">Kechki: &nbsp; {{ $biz->dars_kech }}</p>
+                @endforeach
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-semi-bold text-primary mb-4">Bizning manzil:</h4>
+                @foreach ($bizlar as $biz)
+                    <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ $biz->lokatsiya }}</p>
+                    <p><i class="fa fa-phone-alt text-primary mr-2"></i>{{ $biz->nomer }}</p>
+                    <p><i class="fa fa-envelope text-primary mr-2"></i>{{ $biz->email }}</p>
+                @endforeach --}}
                 <p class="mb-1">Ertalab: &nbsp; 08 : 30 - 13 : 00</p>
                 <p class="mb-0">Kechki: &nbsp; 13 : 00 - 18 : 00</p>
             </div>
@@ -115,24 +125,29 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Menyu qismi:</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="{{ route('index') }}"><i class="fa fa-angle-right mr-2"></i>Bosh sahifa</a>
-                    <a class="text-white mb-2" href="{{ route('teachers') }}"><i class="fa fa-angle-right mr-2"></i>Our Projects</a>
-                    <div class="nav-item dropdown dropdown-footer">
-                        <a href="#" class="nav-link dropdown-toggle text-white mb-2" data-toggle="dropdown"><i class="fa fa-angle-right mr-2"></i>O'quvchilar</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ route('men') }}" class="dropdown-item">Yigitlar</a>
-                            <a href="{{route('weman')}}" class="dropdown-item">Qizlar</a>
-                        </div>
-                    </div>
-                    <a class="text-white mb-2" href="{{ route('about' )}}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white" href="{{ route('contact') }}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    <a class="text-white mb-2" href="{{ route('index') }}"><i class="fa fa-angle-right mr-2"></i>
+                        Bosh sahifa
+                    </a>
+                    <a href="{{ route('teachers') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
+                        Xodimlar
+                    </a>
+                    <a href="{{ route('students_all') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
+                        Talabalar
+                    </a>
+                    <a href="{{ route('about') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
+                        Maktab haqida
+                    </a>
+                    <a href="{{ route('contact') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
+                        Talaba qoshish
+                    </a>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Email Jonatish:</h4>
                 <p>
-                    Agar sizda ushbu maktabda o'qish istagi bolsa yokida qoshimcha fikr mulohazalar 
-                    bolsa ushbu <a href="#"><u>Email</u></a>  orqali bizga aloqaga chiqishingiz mumkin.
+                    Agar sizda ushbu maktabda o'qish istagi bolsa yokida qoshimcha fikr mulohazalar
+                    bolsa ushbu <a href="#"><u>Email</u></a> orqali bizga aloqaga chiqishingiz mumkin.
                 </p>
                 <div class="w-100">
                     <div class="input-group">
@@ -150,8 +165,8 @@
         style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. Designed by <a
-                        href="">HTML Codex</a>
+                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. Designed
+                    by <a href="">HTML Codex</a>
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">

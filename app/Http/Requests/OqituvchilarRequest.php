@@ -22,7 +22,7 @@ class OqituvchilarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'rasm' => 'required|nullable',
+            // 'rasm' => 'required|nullable',
             'ism' => 'required|max:80',
             'fan' => 'required|max:80',
         ];
