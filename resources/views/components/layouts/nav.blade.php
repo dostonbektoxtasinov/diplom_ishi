@@ -11,8 +11,7 @@
             <a href="{{ route('teachers') }}" class="nav-item nav-link">Xodimlar</a>
             <a href="{{ route('students_all') }}" class="nav-item nav-link">Talabalar</a>
             <a href="{{ route('about' )}}" class="nav-item nav-link">Maktab haqida</a>
-            <a href="{{ route('contact') }}" class="nav-item nav-link">Talaba qoshish</a>
         </div>
-        <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
+        <a href="" class="btn btn-primary mr-3 d-none d-lg-block">25 - Maktab</a>
     </div>
 </nav>

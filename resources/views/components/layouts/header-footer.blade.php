@@ -137,9 +137,6 @@
                     <a href="{{ route('about') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
                         Maktab haqida
                     </a>
-                    <a href="{{ route('contact') }}" class="text-white mb-2"><i class="fa fa-angle-right mr-2"></i>
-                        Talaba qoshish
-                    </a>
 
                 </div>
             </div>

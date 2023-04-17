@@ -71,8 +71,5 @@ class PageController extends Controller
         return view('students_all')->with('posts', $posts);
     }
 
-    public function contact()
-    {
-        return view('contact');
-    }
+   
 }

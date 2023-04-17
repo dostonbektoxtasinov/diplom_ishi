@@ -5,13 +5,6 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            @foreach ($posts as $post)
-                <ol class="carousel-indicators">
-                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#header-carousel" data-slide-to="1"></li>
-                    <li data-target="#header-carousel" data-slide-to="2"></li>
-                </ol>
-            @endforeach
             <div class="carousel-inner">
                 @foreach ($posts as $post)
                     <div class="carousel-item active">

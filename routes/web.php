@@ -30,7 +30,6 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/Maktab haqida', [PageController::class, 'about'])->name('about');
 Route::get('/Xodimlar', [PageController::class, 'teachers'])->name('teachers');
 Route::get('/Talabalar', [PageController::class, 'students_all'])->name('students_all');
-Route::get('/Talaba qo\'shish', [PageController::class, 'contact'])->name('contact');
 
 
 
