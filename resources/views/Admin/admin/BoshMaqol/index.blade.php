@@ -7,6 +7,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Fon rasm</th>
                     <th>Maqol</th>
                     <th></th>
                     <th>
@@ -21,6 +22,9 @@
                 @foreach($posts as $post)
                     <tr>
                         <td>{{ $post->id }}</td>
+                        <td>
+                            <img src="{{asset('storage/'.$post->rasm)}}" style="width: 100px" alt="">
+                        </td>
                         <td>{{ $post->maqollar }}</td>
                         <td>
                             <a href="{{ route('BoshMaqol.edit', ['BoshMaqol' => $post->id]) }}" class="btn btn-primary">
@@ -42,6 +46,7 @@
             <tfoot>
                 <tr>
                     <th>Id</th>
+                    <th>Fon rasm</th>
                     <th>Maqol</th>
                 </tr>
             </tfoot>

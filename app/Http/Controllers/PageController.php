@@ -41,13 +41,7 @@ class PageController extends Controller
         ]);
     }
 
-    // public function footer()
-    // {
-    //     $foot = BizHaqimizda::all();
-    //     // dd($foot);
-    //     return view('components.layouts.header-footer')->with(['foot' => $foot]);
 
-    // }
     public function teachers()
     {
         $oqituvchilars = Oqituvchilar::all();

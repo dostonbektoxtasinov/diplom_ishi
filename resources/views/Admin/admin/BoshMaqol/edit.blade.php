@@ -6,9 +6,13 @@
     <div class="col-lg-7 mb-5 mb-lg-0">
         <div class="contact-form">
             <div id="success"></div>
-            <form action="{{ route('BoshMaqol.update', ['BoshMaqol' => $BoshMaqol->id]) }}"  method="POST">
+            <form action="{{ route('BoshMaqol.update', ['BoshMaqol' => $BoshMaqol->id]) }}"  method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
+                <div class="control-group mb-4">
+                    <input type="file" class="form-control p-4" name="rasm" placeholder="Rasm" />
+                    <p class="help-block text-danger"></p>
+                </div>
                 <div class="control-group mb-4">
                     <input type="text" class="form-control p-4" name="maqol" placeholder="Yangi maqol" value="{{ $BoshMaqol->maqollar }}" />
                     @error('Ism')

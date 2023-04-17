@@ -37,15 +37,15 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="/admin-img/img/PhotoRoom-20220623_170756.png"  alt="AdminLTELogo" height="100"
-                width="100" style="border-radius: 100%">
-                <h4>
-                    <b>
-                        DOSTONBEK 
-                        <br> 
-                        TO'XTASINOV
-                    </b>
-                </h4>
+            <img class="animation__shake" src="/admin-img/img/PhotoRoom-20220623_170756.png" alt="AdminLTELogo"
+                height="100" width="100" style="border-radius: 100%">
+            <h4>
+                <b>
+                    DOSTONBEK
+                    <br>
+                    TO'XTASINOV
+                </b>
+            </h4>
         </div>
 
 
@@ -56,7 +56,7 @@
         <div class="content-wrapper">
 
             <section class="content">
-                
+
                 <div class="container-fluid">
                     @yield('content')
                 </div>

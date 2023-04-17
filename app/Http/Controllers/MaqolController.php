@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BoshmaqolRequest;
 use App\Models\Maqol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MaqolController extends Controller
 {
@@ -32,10 +33,17 @@ class MaqolController extends Controller
      */
     public function store(BoshmaqolRequest $request)
     {
+
+        if ($request->has('rasm')) {
+
+            $name = $request->file('rasm')->getClientOriginalName();
+            $path = $request->file('rasm')->storeAs('Maqol', $name);
+        }
+
         $post = Maqol::create([
+            'rasm' => $path ?? null,
             'maqollar' => $request->maqol,
         ]);
-
         return redirect()->route('BoshMaqol.index');
     }
 
@@ -60,7 +68,19 @@ class MaqolController extends Controller
      */
     public function update(BoshmaqolRequest $request, Maqol $BoshMaqol)
     {
+        if ($request->hasFile('rasm')) {
+
+            if (isset($BoshMaqol->rasm)) {
+                Storage::delete($BoshMaqol->rasm);
+                $BoshMaqol->rasm = $request->file('rasm')->store('BoshMaqol');
+            }
+
+            $name = $request->file('rasm')->getClientOriginalName();
+            $path = $request->file('rasm')->storeAs('Maqol', $name);
+        }
+
         $BoshMaqol->update([
+            'rasm' => $path ?? $BoshMaqol->rasm,
             'maqollar' => $request->maqol,
         ]);
 
@@ -71,7 +91,7 @@ class MaqolController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Maqol $BoshMaqol)
-    {   
+    {
         $BoshMaqol->delete();
 
         return redirect()->route('BoshMaqol.index');

@@ -22,6 +22,7 @@ class BoshmaqolRequest extends FormRequest
     public function rules(): array
     {
         return [
+            // 'rasm' => 'required',
             // 'maqollar' => 'required|max:255',
         ];
     }

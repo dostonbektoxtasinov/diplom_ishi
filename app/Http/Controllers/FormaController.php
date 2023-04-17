@@ -100,9 +100,7 @@ class FormaController extends Controller
      */
     public function destroy(Forma $Forma)
     {
-        $Forma->update([
-            'umumiy' => 1
-        ]);
+        $Forma->delete();
 
         return redirect()->route('Forma.index');
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BizHaqimizdaController;
 use App\Http\Controllers\BoysController;
 use App\Http\Controllers\FormaController;
@@ -26,23 +27,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('index');
-// Route::get('/', [PageController::class, 'footer'])->name('footer');
 Route::get('/Maktab haqida', [PageController::class, 'about'])->name('about');
 Route::get('/Xodimlar', [PageController::class, 'teachers'])->name('teachers');
 Route::get('/Talabalar', [PageController::class, 'students_all'])->name('students_all');
 Route::get('/Talaba qo\'shish', [PageController::class, 'contact'])->name('contact');
 
-// Route::get('/Talaba haqida', [PageController::class, 'student'])->name('student');
 
 
-//Admin panel
-Route::get('/admin', [MainController::class, 'admin']);
-// Route::get('Forma/edit/{id}', [FormaController::class, 'edit']);
+//auth
+Route::get('/admin', [MainController::class, 'admin'])->name('admin');
+Route::post('/auth', [MainController::class, 'auth'])->name('auth');
+
+
+
+
+// admin panel 
+Route::get('/maktab_admin_paneliga_kirdingiz', [MainController::class, 'maktab_admin_paneliga_kirdingiz'])->name('maktab_admin_paneliga_kirdingiz');
 Route::resource('admin/Forma', FormaController::class);
 Route::resource('admin/Xonalar', XonaController::class);
-Route::resource('admin/qizlar', QizlarController::class);
 Route::resource('admin/BoshMaqol', MaqolController::class);
-Route::resource('admin/yigitlar', YigitlarController::class);
 Route::resource('admin/oquvchilar', OquvchilarController::class);
 Route::resource('admin/oqituvchi', OqituvchilarController::class);
 Route::resource('admin/biz_haqimizda', BizHaqimizdaController::class);

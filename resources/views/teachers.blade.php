@@ -25,33 +25,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel team-carousel position-relative">
-                        @foreach ($oqituvchilars as $oqituvchilar)
-                            <div class="team d-flex flex-column text-center rounded overflow-hidden">
-                                <div class="position-relative">
-                                    <div class="team-img">
-                                        <img class="img-fluid w-100" src="{{ asset('storage/'.$oqituvchilar->rasm) }}"
-                                            style="height: 350px;" alt="">
-                                    </div>
-                                    <div
-                                        class="team-social d-flex flex-column align-items-center justify-content-center bg-primary">
-                                        <a class="btn btn-secondary btn-social mb-2" href="#"><i
-                                                class="fab fa-telegram"></i></a>
-                                        <a class="btn btn-secondary btn-social mb-2" href="#"><i
-                                                class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-secondary btn-social" href="#"><i
-                                                class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column bg-primary text-center py-4">
-                                    <h5 class="font-weight-bold">{{ $oqituvchilar->ism }}</h5>
-                                    <p class="text-white m-0">{{ $oqituvchilar->fan }}</p>
+                {{-- <div class="col-12"> --}}
+                    @foreach ($oqituvchilars as $oqituvchilar)
+                        <div class="col-lg-4 col-md-6 mb-5">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded w-100" style="height: 250px;"
+                                    src="{{ asset('storage/' . $oqituvchilar->rasm) }}" alt="">
+                                <div class="blog-date">
+                                    <h4 class="font-weight-bold mb-n1">01</h4>
+                                    <small class="text-white text-uppercase">Jan</small>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                </div>
+                            <div class="d-flex mb-2">
+                                <a class="text-secondary text-uppercase font-weight-medium" href="">25 -
+                                    maktab</a>
+                                <span class="text-primary px-2">|</span>
+                                <a class="text-secondary text-uppercase font-weight-medium"
+                                    href="">O'qituvchilar</a>
+                            </div>
+                            <h3 class="font-weight-medium mb-2">{{ $oqituvchilar->ism }}</h3>
+                            <h5 class="mb-4">{{ $oqituvchilar->fan }}</h5>
+                        </div>
+                    @endforeach
+                {{-- </div> --}}
             </div>
         </div>
     </div>

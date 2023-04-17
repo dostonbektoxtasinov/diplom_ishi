@@ -5,13 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class MainController extends Controller
+class AuthController extends Controller
 {
-    public function maktab_admin_paneliga_kirdingiz()
-    {
-        return view('Admin.layouts.main');
-    }
-
     public function admin()
     {
         return view('auth.auth');
@@ -26,12 +21,7 @@ class MainController extends Controller
         ]);
 
         if ($auth) {
-            return redirect()->route('maktab_admin_paneliga_kirdingiz');
+            return redirect()->route('/admins');
         }
-        return redirect()->route('admin');
     }
-
-
-
-  
 }
