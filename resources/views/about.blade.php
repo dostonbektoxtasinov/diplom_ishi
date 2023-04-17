@@ -1,7 +1,7 @@
 <x-layouts.header-footer>
-    <x-slot:footer>
+    <x-slot:title>
         Maktab haqida
-    </x-slot:footer>
+    </x-slot:title>
 
     <x-layouts.pages>
         Maktab haqida
