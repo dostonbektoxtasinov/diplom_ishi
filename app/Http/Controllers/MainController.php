@@ -12,7 +12,7 @@ class MainController extends Controller
         return view('Admin.layouts.main');
     }
 
-    public function admin()
+    public function admin() 
     {
         return view('auth.auth');
     }

@@ -72,7 +72,7 @@ class MaqolController extends Controller
 
             if (isset($BoshMaqol->rasm)) {
                 Storage::delete($BoshMaqol->rasm);
-                $BoshMaqol->rasm = $request->file('rasm')->store('BoshMaqol');
+                $BoshMaqol->rasm = $request->file('rasm')->store('Maqol');
             }
 
             $name = $request->file('rasm')->getClientOriginalName();

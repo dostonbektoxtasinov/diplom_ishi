@@ -24,7 +24,7 @@ class PageController extends Controller
         $oquvchi = Oquvchilar::all()->count();
         $oqituvchi = Oqituvchilar::all()->count();
         $ayol = Oquvchilar::where('jinsi', 'Ayol')->get()->count();
-        $erkak = Oquvchilar::where("jinsi", "Erkak")->get()->count();   
+        $erkak = Oquvchilar::where("jinsi", "Erkak")->get()->count();
 
         return view('index')->with([
             'posts' => $posts,
@@ -34,7 +34,7 @@ class PageController extends Controller
             'bizlar' => $bizlar,
             'oquvchilars' => $oquvchilars,
             // count
-            'erkak' =>$erkak,
+            'erkak' => $erkak,
             'ayol' => $ayol,
             'oqituvchi' => $oqituvchi,
             'oquvchi' => $oquvchi,
@@ -70,6 +70,4 @@ class PageController extends Controller
 
         return view('students_all')->with('posts', $posts);
     }
-
-   
 }

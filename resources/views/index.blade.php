@@ -74,10 +74,7 @@
                     <div class="d-flex flex-column align-items-center justify-content-center bg-about rounded h-100 py-5 px-3"
                         style="background-position: center;">
                         <i class="fa fa-5x fa-award tex t-primary mb-4"></i>
-
-                        {{-- <h1 class="display-2 text-white mb-2" data-toggle="counter-up">1624</h1> --}}
                         <h1 class="display-2 text-white mb-2" data-toggle="counter-up">{{ $oquvchi }}</h1>
-
                         <h2 class="text-white m-0 text-center">
                             Maktab o'quvchilari <br>
                             soni
@@ -158,7 +155,7 @@
                                     25
                                 </div>
                                 <h5 class="font-weight-bold mb-4 px-4">{{ $forma->ism }}</h5>
-                                <img src="{{ asset('storage/' . $forma->rasm) }}" style="width: 150px"
+                                <img src="{{ asset('storage/'.$forma->rasm) }}" style="width: 150px"
                                     alt="">
                             </div>
                         @endforeach

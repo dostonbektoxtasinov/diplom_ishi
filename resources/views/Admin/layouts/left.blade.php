@@ -39,7 +39,7 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
      with font-awesome or any other icon font library -->
-                <li class="nav-item"> {{-- <-- class ichida edi menu-open --}}
+                <li class="nav-item menu-open">
                     <a href="#" class="nav-link">
                         <i class="fa-solid fa-users nav-icon"></i>
                         <p>
@@ -90,39 +90,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item"> {{-- <-- class ichida edi menu-open --}}
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-users nav-icon"></i>
-                        <p>
-                            O'quvchilar
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/yigitlar" class="nav-link">
-                                <i class="fa-solid fa-user nav-icon"></i>
-                                <p>Yigitlar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/qizlar" class="nav-link">
-                                <i class="fa-solid fa-user nav-icon"></i>
-                                <p>Qizlar</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Maktab haqida
-                        </p>
-                    </a>
-                </li>
+               
               
-                <li class="nav-header">EXAMPLES</li>
+                <li class="nav-header">MAKTAB - 25</li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
